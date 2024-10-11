@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üye Kayıt Formu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #signature {
+            border: 1px solid #ccc;
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Üye Kayıt Formu</h2>
+        <form id="form">
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="tc" class="form-label">T.C. Kimlik No:</label>
+                    <input type="text" class="form-control" id="tc" name="tc" value="1234567128901">
+                </div>
+                <div class="col-md-3">
+                    <label for="name" class="form-label">Adı Soyadı:</label>
+                    <input type="text" class="form-control" id="name" name="name" value="John Doe">
+                </div>
+                <div class="col-md-3">
+                    <label for="fatherName" class="form-label">Baba Adı:</label>
+                    <input type="text" class="form-control" id="fatherName" name="fatherName" value="Doe Father">
+                </div>
+                <div class="col-md-3">
+                    <label for="motherName" class="form-label">Ana Adı:</label>
+                    <input type="text" class="form-control" id="motherName" name="motherName" value="Jane Doe">
+                </div>
+            </div>
+            <div class="row mb-3">
+
+                <div class="col-md-3">
+                    <label for="birthDate" class="form-label">Doğum Tarihi:</label>
+                    <input type="date" class="form-control" id="birthDate" name="birthDate" value="1990-01-01">
+                </div>
+                <div class="col-md-3">
+                    <label for="nationality" class="form-label">Uyruğu:</label>
+                    <input type="text" class="form-control" id="nationality" name="nationality" value="TC">
+                </div>
+                <div class="col-md-3">
+                    <label for="serialNo" class="form-label">Seri No:</label>
+                    <input type="text" class="form-control" id="serialNo" name="serialNo" value="12312312">
+                </div>
+                <div class="col-md-3">
+                    <label for="bloodType" class="form-label">Kan Grubu:</label>
+                    <input type="text" class="form-control" id="bloodType" name="bloodType" value="A Rh(+)">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="email" class="form-label">E-posta:</label>
+                    <input type="email" class="form-control" id="email" name="email" value="john.doe@example.com">
+                </div>
+                <div class="col-md-3">
+                    <label for="phone" class="form-label">Cep Telefonu:</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" value="+905551234567">
+                </div>
+                <div class="col-md-3">
+                    <label for="educationLevel" class="form-label">Tahsili:</label>
+                    <input type="text" class="form-control" id="educationLevel" name="educationLevel" value="Lisans">
+                </div>
+                <div class="col-md-3">
+                    <label for="job" class="form-label">Mesleği:</label>
+                    <input type="text" class="form-control" id="job" name="job" value="Mühendis">
+                </div>
+            </div>
+            
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="homeAddress" class="form-label">Ev Adresi:</label>
+                    <input type="text" class="form-control" id="homeAddress" name="homeAddress" value="Bağdat Cad. No:12, Kadıköy, İstanbul">
+                </div>
+                <div class="col-md-3">
+                    <label for="homePhone" class="form-label">Ev Telefonu:</label>
+                    <input type="text" class="form-control" id="homePhone" name="homePhone" value="0414345345345">
+                </div>
+                <div class="col-md-3">
+                    <label for="workAddress" class="form-label">İş Adresi:</label>
+                    <input type="text" class="form-control" id="workAddress" name="workAddress" value="Bağdat Cad. No:12, Şişli, İstanbul">
+                </div>
+                <div class="col-md-3">
+                    <label for="workPhone" class="form-label">İş Telefonu:</label>
+                    <input type="text" class="form-control" id="workPhone" name="workPhone" value="021612312323">
+                </div>
+                
+            </div>
+            <h3>Acil Durumda Haber Verilecek Kişi</h3>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="emergencyName" class="form-label">Adı Soyadı:</label>
+                    <input type="text" class="form-control" id="emergencyName" name="emergencyName" value="Jane Doe">
+                </div>
+                <div class="col-md-6">
+                    <label for="emergencyRelation" class="form-label">Yakınlığı:</label>
+                    <input type="text" class="form-control" id="emergencyRelation" name="emergencyRelation" value="Annesi">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="emergencyAddress" class="form-label">Adresi:</label>
+                    <input type="text" class="form-control" id="emergencyAddress" name="emergencyAddress" value="Bağdat Cad. No:14, Kadıköy, İstanbul">
+                </div>
+                <div class="col-md-6">
+                    <label for="emergencyPhone" class="form-label">Telefonu:</label>
+                    <input type="tel" class="form-control" id="emergencyPhone" name="emergencyPhone" value="+905551234568">
+                </div>
+            </div>
+        
+            <h3>İmza:</h3>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <canvas id="signature" class="border border-secondary"></canvas><br>
+                    <button type="button" class="btn btn-secondary" id="clearSignature">İmza Sil</button><br><br>
+                </div>
+            </div>
+        
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">PDF'e Bilgileri Yerleştir ve Görüntüle</button>
+                </div>
+            </div>
+        </form>
+        
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script>
+        function convertToAscii(text) {
+                const asciiMap = {
+                    'ç': 'c', 'ğ': 'g', 'ı': 'i', 'İ': 'I', 'ö': 'o', 'ş': 's', 'ü': 'u',
+                    'Ç': 'C', 'Ğ': 'G', 'İ': 'I', 'Ö': 'O', 'Ş': 'S', 'Ü': 'U'
+                };
+
+                return text.split('').map(char => asciiMap[char] || char).join('');
+            }
+            
+        // İmza çizim alanı
+        const canvas = document.getElementById('signature');
+        const ctx = canvas.getContext('2d');
+        let drawing = false;
+
+        canvas.width = 300;
+        canvas.height = 100;
+
+        canvas.addEventListener('mousedown', (e) => {
+            drawing = true;
+            ctx.beginPath();
+            ctx.moveTo(e.offsetX, e.offsetY);
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            if (drawing) {
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
+            }
+        });
+
+        canvas.addEventListener('mouseup', () => {
+            drawing = false;
+        });
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Varsayılan davranışları engelle
+            drawing = true;
+            const touch = e.touches[0];
+            ctx.beginPath();
+            ctx.moveTo(touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop);
+        });
+
+        canvas.addEventListener('touchmove', (e) => {
+            e.preventDefault(); // Varsayılan davranışları engelle
+            if (drawing) {
+                const touch = e.touches[0];
+                ctx.lineTo(touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop);
+                ctx.stroke();
+            }
+        });
+
+    canvas.addEventListener('touchend', () => {
+        drawing = false;
+    });
+
+        document.getElementById('clearSignature').addEventListener('click', () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+
+        document.getElementById('form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            // Formdaki bilgileri al
+            const tc = convertToAscii(document.getElementById('tc').value);
+            const name = convertToAscii(document.getElementById('name').value);
+            const fatherName = convertToAscii(document.getElementById('fatherName').value);
+            const motherName = convertToAscii(document.getElementById('motherName').value);
+            const birthDate = convertToAscii(document.getElementById('birthDate').value);
+            const nationality = convertToAscii(document.getElementById('nationality').value);
+            const serialNo = convertToAscii(document.getElementById('serialNo').value);
+            const bloodType = convertToAscii(document.getElementById('bloodType').value);
+            const email = convertToAscii(document.getElementById('email').value);
+            const phone = convertToAscii(document.getElementById('phone').value);
+            const educationLevel = convertToAscii(document.getElementById('educationLevel').value);
+            const job = convertToAscii(document.getElementById('job').value);
+            const homeAddress = convertToAscii(document.getElementById('homeAddress').value);
+            const homePhone = convertToAscii(document.getElementById('homePhone').value);
+            const workAddress = convertToAscii(document.getElementById('workAddress').value);
+            const workPhone = convertToAscii(document.getElementById('workPhone').value);
+            const emergencyName = convertToAscii(document.getElementById('emergencyName').value);
+            const emergencyRelation = convertToAscii(document.getElementById('emergencyRelation').value);
+            const emergencyAddress = convertToAscii(document.getElementById('emergencyAddress').value);
+            const emergencyPhone = convertToAscii(document.getElementById('emergencyPhone').value);
+
+            // İmza verisini al
+            const signatureDataUrl = canvas.toDataURL('image/png');
+
+            // PDF'i yükle
+            const existingPdfBytes = await fetch("Urfadosk_2022_Uye_Kayit_Belgesi.pdf").then(res => res.arrayBuffer());
+
+            // PDF'i düzenlemek için yükle
+            const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes);
+            const pages = pdfDoc.getPages();
+            const firstPage = pages[0];
+            const lastPage = pages[pages.length - 1];
+            const today = new Date();
+            const day = String(today.getDate()).padStart(2, '0'); // Gün
+            const month = String(today.getMonth() + 1).padStart(2, '0'); // Ay (0-11 arası olduğu için 1 ekliyoruz)
+            const year = today.getFullYear(); // Yıl
+
+            const formattedDate = `${day}/${month}/${year}`;
+
+            // Bilgileri PDF'e yerleştir
+            firstPage.drawText(tc, { x: 210, y: 683, size: 10 });
+            firstPage.drawText(name, { x: 210, y: 670, size: 10 });
+            firstPage.drawText(fatherName, { x: 210, y: 657, size: 10 });
+            firstPage.drawText(motherName, { x: 210, y: 645, size: 10 });
+            firstPage.drawText(birthDate, { x: 210, y: 632, size: 10 });
+            firstPage.drawText(nationality, { x: 210, y: 619, size: 10 });
+            firstPage.drawText(serialNo, { x: 210, y: 606, size: 10 });
+            firstPage.drawText(bloodType, { x: 210, y: 594, size: 10 });
+            firstPage.drawText(email, { x: 210, y: 581, size: 10 });
+            firstPage.drawText(phone, { x: 210, y: 568, size: 10 });
+            firstPage.drawText(educationLevel, { x: 210, y: 505, size: 10 });
+            firstPage.drawText(job, { x: 400, y: 505, size: 10 });
+            firstPage.drawText(homeAddress, { x: 210, y: 492, size: 10 });
+            firstPage.drawText(homePhone, { x: 210, y: 480, size: 10 });
+            firstPage.drawText(workAddress, { x: 210, y: 467, size: 10 });
+            firstPage.drawText(workPhone, { x: 210, y: 456, size: 10 });
+            firstPage.drawText(emergencyName, { x: 210, y: 408, size: 10 });
+            firstPage.drawText(emergencyRelation, { x: 210, y: 393, size: 10 });
+            firstPage.drawText(emergencyAddress, { x: 210, y: 381, size: 10 });
+            firstPage.drawText(emergencyPhone, { x: 210, y: 368, size: 10 });
+            firstPage.drawText(day, { x: 308, y: 313, size: 10 });
+            firstPage.drawText(month, { x: 325, y: 313, size: 10 });
+            firstPage.drawText(name, { x: 420, y: 300, size: 10 });
+            lastPage.drawText(name, { x: 425, y: 740, size: 10 });
+
+            // İmza verisini PDF'e ekle
+            const signatureImage = await pdfDoc.embedPng(signatureDataUrl);
+            const signatureDims = signatureImage.scale(0.5); // İmza boyutunu ayarlayın
+            firstPage.drawImage(signatureImage, {
+                x: 420,
+                y: 250, // İmzanın yerleştirileceği koordinatlar
+                width: signatureDims.width,
+                height: signatureDims.height,
+            });
+            lastPage.drawImage(signatureImage, {
+                x: 410,
+                y: 700, // İmzanın yerleştirileceği koordinatlar
+                width: signatureDims.width,
+                height: signatureDims.height,
+            });
+
+            // PDF'i indir
+            const pdfBytes = await pdfDoc.save();
+            const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
+            window.open(url);
+        });
+    </script>
+</body>
+</html>
