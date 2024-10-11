@@ -115,9 +115,9 @@
             </div>
         
             <h3>İmza:</h3>
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <canvas id="signature" class="border border-secondary"></canvas><br>
+            <div class="">
+                <div class="">
+                    <canvas id="signature" class=""></canvas><br>
                     <button type="button" class="btn btn-secondary" id="clearSignature">İmza Sil</button><br><br>
                 </div>
             </div>
@@ -167,7 +167,7 @@
             drawing = false;
         });
         canvas.addEventListener('touchstart', (e) => {
-            e.preventDefault(); // Varsayılan davranışları engelle
+            //e.preventDefault(); // Varsayılan davranışları engelle
             drawing = true;
             const touch = e.touches[0];
             ctx.beginPath();
@@ -175,7 +175,7 @@
         });
 
         canvas.addEventListener('touchmove', (e) => {
-            e.preventDefault(); // Varsayılan davranışları engelle
+            //e.preventDefault(); // Varsayılan davranışları engelle
             if (drawing) {
                 const touch = e.touches[0];
                 ctx.lineTo(touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop);
