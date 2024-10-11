@@ -115,9 +115,9 @@
             </div>
         
             <h3>İmza:</h3>
-            <div class="">
-                <div class="">
-                    <canvas id="signature" class=""></canvas><br>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <canvas id="signature" class="border border-secondary"></canvas><br>
                     <button type="button" class="btn btn-secondary" id="clearSignature">İmza Sil</button><br><br>
                 </div>
             </div>
@@ -147,18 +147,45 @@
         const ctx = canvas.getContext('2d');
         let drawing = false;
 
-        canvas.width = 300;
-        canvas.height = 100;
+        // Canvas'ı ekran genişliğine uygun ayarla (mobil uyumlu)
+        function resizeCanvas() {
+            const ratio = Math.max(window.devicePixelRatio || 1, 1);
+            canvas.width = 300 * ratio;
+            canvas.height = 100 * ratio;
+            ctx.scale(ratio, ratio);
+            ctx.lineWidth = 2;  // Çizgi kalınlığı ayarı
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();  // Başlangıçta canvas boyutunu ayarla
+
+        function getTouchPos(canvasDom, touchEvent) {
+            const rect = canvasDom.getBoundingClientRect();
+            return {
+                x: touchEvent.touches[0].clientX - rect.left,
+                y: touchEvent.touches[0].clientY - rect.top
+            };
+        }
+
+        function getMousePos(canvasDom, mouseEvent) {
+            const rect = canvasDom.getBoundingClientRect();
+            return {
+                x: mouseEvent.clientX - rect.left,
+                y: mouseEvent.clientY - rect.top
+            };
+        }
 
         canvas.addEventListener('mousedown', (e) => {
             drawing = true;
+            const pos = getMousePos(canvas, e);
             ctx.beginPath();
-            ctx.moveTo(e.offsetX, e.offsetY);
+            ctx.moveTo(pos.x, pos.y);
         });
 
         canvas.addEventListener('mousemove', (e) => {
             if (drawing) {
-                ctx.lineTo(e.offsetX, e.offsetY);
+                const pos = getMousePos(canvas, e);
+                ctx.lineTo(pos.x, pos.y);
                 ctx.stroke();
             }
         });
@@ -166,26 +193,31 @@
         canvas.addEventListener('mouseup', () => {
             drawing = false;
         });
+
+        canvas.addEventListener('mouseleave', () => {
+            drawing = false;
+        });
+
         canvas.addEventListener('touchstart', (e) => {
-            e.preventDefault(); // Varsayılan davranışları engelle
+            e.preventDefault();
             drawing = true;
-            const touch = e.touches[0];
+            const pos = getTouchPos(canvas, e);
             ctx.beginPath();
-            ctx.moveTo(touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop);
+            ctx.moveTo(pos.x, pos.y);
         });
 
         canvas.addEventListener('touchmove', (e) => {
-            e.preventDefault(); // Varsayılan davranışları engelle
+            e.preventDefault();
             if (drawing) {
-                const touch = e.touches[0];
-                ctx.lineTo(touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop);
+                const pos = getTouchPos(canvas, e);
+                ctx.lineTo(pos.x, pos.y);
                 ctx.stroke();
             }
         });
 
-    canvas.addEventListener('touchend', () => {
-        drawing = false;
-    });
+        canvas.addEventListener('touchend', () => {
+            drawing = false;
+        });
 
         document.getElementById('clearSignature').addEventListener('click', () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -262,7 +294,7 @@
 
             // İmza verisini PDF'e ekle
             const signatureImage = await pdfDoc.embedPng(signatureDataUrl);
-            const signatureDims = signatureImage.scale(0.5); // İmza boyutunu ayarlayın
+            const signatureDims = signatureImage.scale(0.2); // İmza boyutunu ayarlayın
             firstPage.drawImage(signatureImage, {
                 x: 420,
                 y: 250, // İmzanın yerleştirileceği koordinatlar
