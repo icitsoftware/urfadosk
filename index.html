@@ -15,35 +15,40 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="text-center">Üye Kayıt Formu</h2>
+        <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+        <h2 class="text-center">URFADOSK Üye Kayıt Formu</h2>
+        </div>
+        <div class="card-body">
         <form id="form">
             <div class="row mb-3">
                 <div class="col-md-3">
-                    <label for="tc" class="form-label">T.C. Kimlik No:</label>
-                    <input type="text" class="form-control" id="tc" name="tc" value="1234567128901">
+                    <input type="text" class="form-control" id="tc" name="tc" value="" required placeholder="T.C. Kimlik No">
+                    <br>
                 </div>
                 <div class="col-md-3">
-                    <label for="name" class="form-label">Adı Soyadı:</label>
-                    <input type="text" class="form-control" id="name" name="name" value="John Doe">
+                    <input type="text" class="form-control" id="name" name="name" value="John Doe" required placeholder="Adı Soyadı">
+                    <br>
                 </div>
+                <br>
                 <div class="col-md-3">
-                    <label for="fatherName" class="form-label">Baba Adı:</label>
-                    <input type="text" class="form-control" id="fatherName" name="fatherName" value="Doe Father">
+                    <input type="text" class="form-control" id="fatherName" name="fatherName" value="Joe Doe" required placeholder="Baba Adı">
+                    <br>
                 </div>
+                <br>
                 <div class="col-md-3">
-                    <label for="motherName" class="form-label">Ana Adı:</label>
-                    <input type="text" class="form-control" id="motherName" name="motherName" value="Jane Doe">
+                    <input type="text" class="form-control" id="motherName" name="motherName" value="Jane Doe" required placeholder="Ana Adı">
                 </div>
             </div>
             <div class="row mb-3">
 
                 <div class="col-md-3">
                     <label for="birthDate" class="form-label">Doğum Tarihi:</label>
-                    <input type="date" class="form-control" id="birthDate" name="birthDate" value="1990-01-01">
+                    <input type="date" class="form-control" id="birthDate" name="birthDate" value="1990-01-01" required>
                 </div>
                 <div class="col-md-3">
                     <label for="nationality" class="form-label">Uyruğu:</label>
-                    <input type="text" class="form-control" id="nationality" name="nationality" value="TC">
+                    <input type="text" class="form-control" id="nationality" name="nationality" value="TC" required>
                 </div>
                 <div class="col-md-3">
                     <label for="serialNo" class="form-label">Seri No:</label>
@@ -51,21 +56,38 @@
                 </div>
                 <div class="col-md-3">
                     <label for="bloodType" class="form-label">Kan Grubu:</label>
-                    <input type="text" class="form-control" id="bloodType" name="bloodType" value="A Rh(+)">
-                </div>
+                    <select class="form-select" id="bloodType" name="bloodType">
+                        <option value="0 Rh(+)" selected>0 Rh(+)</option>
+                        <option value="0 Rh(-)">0 Rh(-)</option>
+                        <option value="A Rh(+)">A Rh(+)</option>
+                        <option value="A Rh(-)">A Rh(-)</option>
+                        <option value="B Rh(+)">B Rh(+)</option>
+                        <option value="B Rh(-)">B Rh(-)</option>
+                        <option value="AB Rh(+)">AB Rh(+)</option>
+                        <option value="AB Rh(-)">AB Rh(-)</option>
+                    </select>
+                </div>                
             </div>
             <div class="row mb-3">
                 <div class="col-md-3">
                     <label for="email" class="form-label">E-posta:</label>
-                    <input type="email" class="form-control" id="email" name="email" value="john.doe@example.com">
+                    <input type="email" class="form-control" id="email" name="email" value="john.doe@example.com" required>
                 </div>
                 <div class="col-md-3">
                     <label for="phone" class="form-label">Cep Telefonu:</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" value="+905551234567">
+                    <input type="tel" class="form-control" id="phone" name="phone" value="+905551234567" required>
                 </div>
                 <div class="col-md-3">
                     <label for="educationLevel" class="form-label">Tahsili:</label>
-                    <input type="text" class="form-control" id="educationLevel" name="educationLevel" value="Lisans">
+                    <select class="form-select" id="educationLevel" name="educationLevel">
+                        <option value="İlkokul">İlkokul</option>
+                        <option value="Ortaokul">Ortaokul</option>
+                        <option value="Lise">Lise</option>
+                        <option value="Ön Lisans">Ön Lisans</option>
+                        <option value="Lisans" selected>Lisans</option>
+                        <option value="Yüksek Lisans">Yüksek Lisans</option>
+                        <option value="Doktora">Doktora</option>
+                    </select>
                 </div>
                 <div class="col-md-3">
                     <label for="job" class="form-label">Mesleği:</label>
@@ -76,7 +98,7 @@
             <div class="row mb-3">
                 <div class="col-md-3">
                     <label for="homeAddress" class="form-label">Ev Adresi:</label>
-                    <input type="text" class="form-control" id="homeAddress" name="homeAddress" value="Bağdat Cad. No:12, Kadıköy, İstanbul">
+                    <input type="text" class="form-control" id="homeAddress" name="homeAddress" value="Bağdat Cad. No:12, Kadıköy, İstanbul" required>
                 </div>
                 <div class="col-md-3">
                     <label for="homePhone" class="form-label">Ev Telefonu:</label>
@@ -96,7 +118,7 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="emergencyName" class="form-label">Adı Soyadı:</label>
-                    <input type="text" class="form-control" id="emergencyName" name="emergencyName" value="Jane Doe">
+                    <input type="text" class="form-control" id="emergencyName" name="emergencyName" value="Jane Doe" required>
                 </div>
                 <div class="col-md-6">
                     <label for="emergencyRelation" class="form-label">Yakınlığı:</label>
@@ -110,7 +132,7 @@
                 </div>
                 <div class="col-md-6">
                     <label for="emergencyPhone" class="form-label">Telefonu:</label>
-                    <input type="tel" class="form-control" id="emergencyPhone" name="emergencyPhone" value="+905551234568">
+                    <input type="tel" class="form-control" id="emergencyPhone" name="emergencyPhone" value="+905551234568" required>
                 </div>
             </div>
         
@@ -128,8 +150,7 @@
                 </div>
             </div>
         </form>
-        
-        
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
     <script>
@@ -149,11 +170,21 @@
 
         // Canvas'ı ekran genişliğine uygun ayarla (mobil uyumlu)
         function resizeCanvas() {
+            // Önceki çizimi kaydet
+            const savedData = canvas.toDataURL();
+
             const ratio = Math.max(window.devicePixelRatio || 1, 1);
             canvas.width = 300 * ratio;
             canvas.height = 100 * ratio;
             ctx.scale(ratio, ratio);
-            ctx.lineWidth = 2;  // Çizgi kalınlığı ayarı
+            ctx.lineWidth = 2;
+
+            // Önceki çizimi geri yükle
+            const img = new Image();
+            img.src = savedData;
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0);
+            };
         }
 
         window.addEventListener('resize', resizeCanvas);
