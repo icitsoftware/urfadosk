@@ -167,7 +167,7 @@
             drawing = false;
         });
         canvas.addEventListener('touchstart', (e) => {
-            //e.preventDefault(); // Varsayılan davranışları engelle
+            e.preventDefault(); // Varsayılan davranışları engelle
             drawing = true;
             const touch = e.touches[0];
             ctx.beginPath();
@@ -175,7 +175,7 @@
         });
 
         canvas.addEventListener('touchmove', (e) => {
-            //e.preventDefault(); // Varsayılan davranışları engelle
+            e.preventDefault(); // Varsayılan davranışları engelle
             if (drawing) {
                 const touch = e.touches[0];
                 ctx.lineTo(touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop);
