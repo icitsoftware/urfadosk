@@ -23,39 +23,38 @@
         <form id="form">
             <div class="row mb-3">
                 <div class="col-md-3">
+                    <label for="tc" class="form-label">T.C. Kimlik No*</label>
                     <input type="text" class="form-control" id="tc" name="tc" value="" required placeholder="T.C. Kimlik No">
-                    <br>
                 </div>
                 <div class="col-md-3">
+                    <label for="name" class="form-label">Adı Soyadı*</label>
                     <input type="text" class="form-control" id="name" name="name" value="John Doe" required placeholder="Adı Soyadı">
-                    <br>
                 </div>
                 <br>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" id="fatherName" name="fatherName" value="Joe Doe" required placeholder="Baba Adı">
-                    <br>
+                    <label for="fatherName" class="form-label">Baba Adı</label>
+                    <input type="text" class="form-control" id="fatherName" name="fatherName" value="Joe Doe" placeholder="Baba Adı">
                 </div>
                 <br>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" id="motherName" name="motherName" value="Jane Doe" required placeholder="Ana Adı">
-                </div>
+                    <label for="motherName" class="form-label">Ana Adı</label>
+                    <input type="text" class="form-control" id="motherName" name="motherName" value="Jane Doe" placeholder="Ana Adı">
             </div>
             <div class="row mb-3">
-
                 <div class="col-md-3">
-                    <label for="birthDate" class="form-label">Doğum Tarihi:</label>
+                    <label for="birthDate" class="form-label">Doğum Tarihi*</label>
                     <input type="date" class="form-control" id="birthDate" name="birthDate" value="1990-01-01" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="nationality" class="form-label">Uyruğu:</label>
+                    <label for="nationality" class="form-label">Uyruğu*</label>
                     <input type="text" class="form-control" id="nationality" name="nationality" value="TC" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="serialNo" class="form-label">Seri No:</label>
+                    <label for="serialNo" class="form-label">Seri No</label>
                     <input type="text" class="form-control" id="serialNo" name="serialNo" value="12312312">
                 </div>
                 <div class="col-md-3">
-                    <label for="bloodType" class="form-label">Kan Grubu:</label>
+                    <label for="bloodType" class="form-label">Kan Grubu*</label>
                     <select class="form-select" id="bloodType" name="bloodType">
                         <option value="0 Rh(+)" selected>0 Rh(+)</option>
                         <option value="0 Rh(-)">0 Rh(-)</option>
@@ -70,15 +69,15 @@
             </div>
             <div class="row mb-3">
                 <div class="col-md-3">
-                    <label for="email" class="form-label">E-posta:</label>
-                    <input type="email" class="form-control" id="email" name="email" value="john.doe@example.com" required>
+                    <label for="email" class="form-label">E-posta</label>
+                    <input type="email" class="form-control" id="email" name="email" value="john.doe@example.com">
                 </div>
                 <div class="col-md-3">
-                    <label for="phone" class="form-label">Cep Telefonu:</label>
+                    <label for="phone" class="form-label">Cep Telefonu*</label>
                     <input type="tel" class="form-control" id="phone" name="phone" value="+905551234567" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="educationLevel" class="form-label">Tahsili:</label>
+                    <label for="educationLevel" class="form-label">Tahsili</label>
                     <select class="form-select" id="educationLevel" name="educationLevel">
                         <option value="İlkokul">İlkokul</option>
                         <option value="Ortaokul">Ortaokul</option>
@@ -90,26 +89,26 @@
                     </select>
                 </div>
                 <div class="col-md-3">
-                    <label for="job" class="form-label">Mesleği:</label>
+                    <label for="job" class="form-label">Mesleği</label>
                     <input type="text" class="form-control" id="job" name="job" value="Mühendis">
                 </div>
             </div>
             
             <div class="row mb-3">
                 <div class="col-md-3">
-                    <label for="homeAddress" class="form-label">Ev Adresi:</label>
+                    <label for="homeAddress" class="form-label">Ev Adresi*</label>
                     <input type="text" class="form-control" id="homeAddress" name="homeAddress" value="Bağdat Cad. No:12, Kadıköy, İstanbul" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="homePhone" class="form-label">Ev Telefonu:</label>
+                    <label for="homePhone" class="form-label">Ev Telefonu</label>
                     <input type="text" class="form-control" id="homePhone" name="homePhone" value="0414345345345">
                 </div>
                 <div class="col-md-3">
-                    <label for="workAddress" class="form-label">İş Adresi:</label>
+                    <label for="workAddress" class="form-label">İş Adresi</label>
                     <input type="text" class="form-control" id="workAddress" name="workAddress" value="Bağdat Cad. No:12, Şişli, İstanbul">
                 </div>
                 <div class="col-md-3">
-                    <label for="workPhone" class="form-label">İş Telefonu:</label>
+                    <label for="workPhone" class="form-label">İş Telefonu</label>
                     <input type="text" class="form-control" id="workPhone" name="workPhone" value="021612312323">
                 </div>
                 
@@ -117,35 +116,32 @@
             <h3>Acil Durumda Haber Verilecek Kişi</h3>
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label for="emergencyName" class="form-label">Adı Soyadı:</label>
+                    <label for="emergencyName" class="form-label">Adı Soyadı*</label>
                     <input type="text" class="form-control" id="emergencyName" name="emergencyName" value="Jane Doe" required>
                 </div>
                 <div class="col-md-6">
-                    <label for="emergencyRelation" class="form-label">Yakınlığı:</label>
+                    <label for="emergencyRelation" class="form-label">Yakınlığı</label>
                     <input type="text" class="form-control" id="emergencyRelation" name="emergencyRelation" value="Annesi">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label for="emergencyAddress" class="form-label">Adresi:</label>
+                    <label for="emergencyAddress" class="form-label">Adresi</label>
                     <input type="text" class="form-control" id="emergencyAddress" name="emergencyAddress" value="Bağdat Cad. No:14, Kadıköy, İstanbul">
                 </div>
                 <div class="col-md-6">
-                    <label for="emergencyPhone" class="form-label">Telefonu:</label>
+                    <label for="emergencyPhone" class="form-label">Telefonu*</label>
                     <input type="tel" class="form-control" id="emergencyPhone" name="emergencyPhone" value="+905551234568" required>
                 </div>
             </div>
         
             <h3>İmza:</h3>
             <div class="row mb-3">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <canvas id="signature" class="border border-secondary"></canvas><br>
                     <button type="button" class="btn btn-secondary" id="clearSignature">İmza Sil</button><br><br>
                 </div>
-            </div>
-        
-            <div class="row mb-3">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <button type="submit" class="btn btn-primary">PDF'e Bilgileri Yerleştir ve Görüntüle</button>
                 </div>
             </div>
@@ -163,23 +159,18 @@
                 return text.split('').map(char => asciiMap[char] || char).join('');
             }
             
-        // İmza çizim alanı
         const canvas = document.getElementById('signature');
         const ctx = canvas.getContext('2d');
         let drawing = false;
 
-        // Canvas'ı ekran genişliğine uygun ayarla (mobil uyumlu)
         function resizeCanvas() {
-            // Önceki çizimi kaydet
             const savedData = canvas.toDataURL();
-
             const ratio = Math.max(window.devicePixelRatio || 1, 1);
             canvas.width = 300 * ratio;
             canvas.height = 100 * ratio;
             ctx.scale(ratio, ratio);
             ctx.lineWidth = 2;
 
-            // Önceki çizimi geri yükle
             const img = new Image();
             img.src = savedData;
             img.onload = function() {
@@ -188,7 +179,7 @@
         }
 
         window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();  // Başlangıçta canvas boyutunu ayarla
+        resizeCanvas();
 
         function getTouchPos(canvasDom, touchEvent) {
             const rect = canvasDom.getBoundingClientRect();
@@ -257,7 +248,6 @@
         document.getElementById('form').addEventListener('submit', async function(event) {
             event.preventDefault();
 
-            // Formdaki bilgileri al
             const tc = convertToAscii(document.getElementById('tc').value);
             const name = convertToAscii(document.getElementById('name').value);
             const fatherName = convertToAscii(document.getElementById('fatherName').value);
@@ -279,25 +269,21 @@
             const emergencyAddress = convertToAscii(document.getElementById('emergencyAddress').value);
             const emergencyPhone = convertToAscii(document.getElementById('emergencyPhone').value);
 
-            // İmza verisini al
             const signatureDataUrl = canvas.toDataURL('image/png');
 
-            // PDF'i yükle
             const existingPdfBytes = await fetch("Urfadosk_2022_Uye_Kayit_Belgesi.pdf").then(res => res.arrayBuffer());
 
-            // PDF'i düzenlemek için yükle
             const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes);
             const pages = pdfDoc.getPages();
             const firstPage = pages[0];
             const lastPage = pages[pages.length - 1];
             const today = new Date();
-            const day = String(today.getDate()).padStart(2, '0'); // Gün
-            const month = String(today.getMonth() + 1).padStart(2, '0'); // Ay (0-11 arası olduğu için 1 ekliyoruz)
-            const year = today.getFullYear(); // Yıl
+            const day = String(today.getDate()).padStart(2, '0');
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const year = today.getFullYear();
 
             const formattedDate = `${day}/${month}/${year}`;
 
-            // Bilgileri PDF'e yerleştir
             firstPage.drawText(tc, { x: 210, y: 683, size: 10 });
             firstPage.drawText(name, { x: 210, y: 670, size: 10 });
             firstPage.drawText(fatherName, { x: 210, y: 657, size: 10 });
@@ -323,27 +309,31 @@
             firstPage.drawText(name, { x: 420, y: 300, size: 10 });
             lastPage.drawText(name, { x: 425, y: 740, size: 10 });
 
-            // İmza verisini PDF'e ekle
             const signatureImage = await pdfDoc.embedPng(signatureDataUrl);
-            const signatureDims = signatureImage.scale(0.2); // İmza boyutunu ayarlayın
+            const signatureDims = signatureImage.scale(0.2);
             firstPage.drawImage(signatureImage, {
                 x: 420,
-                y: 250, // İmzanın yerleştirileceği koordinatlar
+                y: 250,
                 width: signatureDims.width,
                 height: signatureDims.height,
             });
             lastPage.drawImage(signatureImage, {
                 x: 410,
-                y: 700, // İmzanın yerleştirileceği koordinatlar
+                y: 700,
                 width: signatureDims.width,
                 height: signatureDims.height,
             });
 
-            // PDF'i indir
-            const pdfBytes = await pdfDoc.save();
-            const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-            const url = URL.createObjectURL(blob);
-            window.open(url);
+                const pdfBytes = await pdfDoc.save(); 
+                const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                const url = URL.createObjectURL(blob);
+                const newWindow = window.open(url, '_blank');
+                if (newWindow === null) {
+                    alert("Pop-up engellendi. Lütfen Google tarayıcı kullanın ya da pop-up izni verin.");
+                } else {
+                    newWindow.focus();
+                }
+
         });
     </script>
 </body>
