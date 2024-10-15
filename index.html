@@ -24,7 +24,7 @@
             <div class="row mb-3">
                 <div class="col-md-3">
                     <label for="tc" class="form-label">T.C. Kimlik No*</label>
-                    <input type="text" class="form-control" id="tc" name="tc" value="" required placeholder="T.C. Kimlik No">
+                    <input type="text" class="form-control" id="tc" name="tc" value="4324324" required >
                 </div>
                 <div class="col-md-3">
                     <label for="name" class="form-label">Adı Soyadı*</label>
@@ -40,6 +40,7 @@
                     <label for="motherName" class="form-label">Ana Adı</label>
                     <input type="text" class="form-control" id="motherName" name="motherName" value="Jane Doe" placeholder="Ana Adı">
             </div>
+        </div>
             <div class="row mb-3">
                 <div class="col-md-3">
                     <label for="birthDate" class="form-label">Doğum Tarihi*</label>
@@ -153,7 +154,7 @@
         function convertToAscii(text) {
                 const asciiMap = {
                     'ç': 'c', 'ğ': 'g', 'ı': 'i', 'İ': 'I', 'ö': 'o', 'ş': 's', 'ü': 'u',
-                    'Ç': 'C', 'Ğ': 'G', 'İ': 'I', 'Ö': 'O', 'Ş': 'S', 'Ü': 'U'
+                    'Ç': 'C', 'Ğ': 'G', 'Ö': 'O', 'Ş': 'S', 'Ü': 'U'
                 };
 
                 return text.split('').map(char => asciiMap[char] || char).join('');
@@ -176,6 +177,7 @@
             img.onload = function() {
                 ctx.drawImage(img, 0, 0);
             };
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
 
         window.addEventListener('resize', resizeCanvas);
@@ -271,68 +273,75 @@
 
             const signatureDataUrl = canvas.toDataURL('image/png');
 
-            const existingPdfBytes = await fetch("Urfadosk_2022_Uye_Kayit_Belgesi.pdf").then(res => res.arrayBuffer());
+            const existingPdfBytes = await fetch("Urfadosk_2024_Uye_Kayit_Belgesi.pdf").then(res => res.arrayBuffer());
 
             const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes);
             const pages = pdfDoc.getPages();
             const firstPage = pages[0];
-            const lastPage = pages[pages.length - 1];
             const today = new Date();
             const day = String(today.getDate()).padStart(2, '0');
             const month = String(today.getMonth() + 1).padStart(2, '0');
-            const year = today.getFullYear();
+            const year = String(today.getFullYear()).padStart(2, '0').slice(-1);
 
-            const formattedDate = `${day}/${month}/${year}`;
-
-            firstPage.drawText(tc, { x: 210, y: 683, size: 10 });
-            firstPage.drawText(name, { x: 210, y: 670, size: 10 });
-            firstPage.drawText(fatherName, { x: 210, y: 657, size: 10 });
-            firstPage.drawText(motherName, { x: 210, y: 645, size: 10 });
-            firstPage.drawText(birthDate, { x: 210, y: 632, size: 10 });
-            firstPage.drawText(nationality, { x: 210, y: 619, size: 10 });
-            firstPage.drawText(serialNo, { x: 210, y: 606, size: 10 });
-            firstPage.drawText(bloodType, { x: 210, y: 594, size: 10 });
-            firstPage.drawText(email, { x: 210, y: 581, size: 10 });
-            firstPage.drawText(phone, { x: 210, y: 568, size: 10 });
-            firstPage.drawText(educationLevel, { x: 210, y: 505, size: 10 });
-            firstPage.drawText(job, { x: 400, y: 505, size: 10 });
-            firstPage.drawText(homeAddress, { x: 210, y: 492, size: 10 });
-            firstPage.drawText(homePhone, { x: 210, y: 480, size: 10 });
-            firstPage.drawText(workAddress, { x: 210, y: 467, size: 10 });
-            firstPage.drawText(workPhone, { x: 210, y: 456, size: 10 });
-            firstPage.drawText(emergencyName, { x: 210, y: 408, size: 10 });
-            firstPage.drawText(emergencyRelation, { x: 210, y: 393, size: 10 });
-            firstPage.drawText(emergencyAddress, { x: 210, y: 381, size: 10 });
-            firstPage.drawText(emergencyPhone, { x: 210, y: 368, size: 10 });
-            firstPage.drawText(day, { x: 308, y: 313, size: 10 });
-            firstPage.drawText(month, { x: 325, y: 313, size: 10 });
-            firstPage.drawText(name, { x: 420, y: 300, size: 10 });
-            lastPage.drawText(name, { x: 425, y: 740, size: 10 });
+            firstPage.drawText(tc, { x: 215, y: 674, size: 10 });
+            firstPage.drawText(name, { x: 215, y: 662, size: 10 });
+            firstPage.drawText(fatherName, { x: 215, y: 650, size: 10 });
+            firstPage.drawText(motherName, { x: 215, y: 637, size: 10 });
+            firstPage.drawText(birthDate, { x: 215, y: 624, size: 10 });
+            firstPage.drawText(nationality, { x: 215, y: 612, size: 10 });
+            firstPage.drawText(serialNo, { x: 215, y: 599, size: 10 });
+            firstPage.drawText(bloodType, { x: 215, y: 587, size: 10 });
+            firstPage.drawText(email, { x: 215, y: 575, size: 10 });
+            firstPage.drawText(phone, { x: 215, y: 562, size: 10 });
+            firstPage.drawText(educationLevel, { x: 215, y: 500, size: 10 });
+            firstPage.drawText(job, { x: 410, y: 500, size: 10 });
+            firstPage.drawText(homeAddress, { x: 215, y: 487, size: 10 });
+            firstPage.drawText(homePhone, { x: 215, y: 475, size: 10 });
+            firstPage.drawText(workAddress, { x: 215, y: 462, size: 10 });
+            firstPage.drawText(workPhone, { x: 215, y: 450, size: 10 });
+            firstPage.drawText(emergencyName, { x: 215, y: 398, size: 10 });
+            firstPage.drawText(emergencyRelation, { x: 215, y: 384, size: 10 });
+            firstPage.drawText(emergencyAddress, { x: 215, y: 372, size: 10 });
+            firstPage.drawText(emergencyPhone, { x: 215, y: 359, size: 10 });
+            firstPage.drawText(day, { x: 350, y: 304, size: 10 });
+            firstPage.drawText(month, { x: 366, y: 304, size: 10 });
+            firstPage.drawText(year, { x: 399, y: 304, size: 10});
+            firstPage.drawText(name, { x: 440, y: 265, size: 10 });
 
             const signatureImage = await pdfDoc.embedPng(signatureDataUrl);
             const signatureDims = signatureImage.scale(0.2);
             firstPage.drawImage(signatureImage, {
-                x: 420,
-                y: 250,
-                width: signatureDims.width,
-                height: signatureDims.height,
-            });
-            lastPage.drawImage(signatureImage, {
-                x: 410,
-                y: 700,
+                x: 430,
+                y: 230,
                 width: signatureDims.width,
                 height: signatureDims.height,
             });
 
-                const pdfBytes = await pdfDoc.save(); 
-                const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-                const url = URL.createObjectURL(blob);
-                const newWindow = window.open(url, '_blank');
+            const pdfBytes = await pdfDoc.save();
+            const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
+            let newWindow = null;
+
+            // Tarayıcı kontrolü
+            const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            const isMiBrowser = /MiuiBrowser/i.test(navigator.userAgent);
+
+            if (isSafari || isMiBrowser) {
+                // Safari veya Mi tarayıcı ise PDF'i indirmeyi öner
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'document.pdf'; // İndirilecek PDF dosyasının adı
+                link.click();
+                alert('Tarayıcıda PDF açma desteği kısıtlı. Dosya indiriliyor.');
+            } else {
+                // Diğer tarayıcılar için yeni sekme açmayı dene
+                newWindow = window.open(url, '_blank');
                 if (newWindow === null) {
-                    alert("Pop-up engellendi. Lütfen Google tarayıcı kullanın ya da pop-up izni verin.");
+                    alert("Pop-up engellendi. Lütfen tarayıcı ayarlarından pop-up izni verin.");
                 } else {
                     newWindow.focus();
                 }
+            }
 
         });
     </script>
