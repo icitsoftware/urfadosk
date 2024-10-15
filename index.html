@@ -8,16 +8,27 @@
     <style>
         #signature {
             border: 1px solid #ccc;
-            width: 300px;
+            width: 250px;
             height: 100px;
         }
+        body {
+            background-image: url('18012022221156-90314-65935.png');            
+            background-repeat: repeat; 
+            background-size: 250px 250px;
+            background-color: rgba(0,0, 0, 0.03)
+        }
+        .card-body {
+            background-color: rgba(0,0, 0, 0.03)
+
+        }
+
     </style>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container mt-3">
         <div class="card shadow-lg">
         <div class="card-header bg-primary text-white text-center">
-        <h2 class="text-center">URFADOSK Üye Kayıt Formu</h2>
+        <h2 class="text-center">URFADOSK Üye Kayıt Formu - <span id="currentDate"></span></h2>
         </div>
         <div class="card-body">
         <form id="form">
@@ -135,14 +146,17 @@
                     <input type="tel" class="form-control" id="emergencyPhone" name="emergencyPhone" value="+905551234568" required>
                 </div>
             </div>
-        
-            <h3>İmza:</h3>
-            <div class="row mb-3">
-                <div class="col-md-6">
+            <div class="row mb-3 g-3">
+                
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <h3>İmza: </h3>
                     <canvas id="signature" class="border border-secondary"></canvas><br>
-                    <button type="button" class="btn btn-secondary" id="clearSignature">İmza Sil</button><br><br>
+                    <button type="button" class="btn " id="clearSignature" title="İmza Sil">
+                        <img src="delete-close-svgrepo-com.svg" alt="İmza Sil" style="width: 20px; height: 20px;">
+                      </button>
+                    
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 d-flex justify-content-center align-items-end ">
                     <button type="submit" class="btn btn-primary">PDF'e Bilgileri Yerleştir ve Görüntüle</button>
                 </div>
             </div>
@@ -167,7 +181,7 @@
         function resizeCanvas() {
             const savedData = canvas.toDataURL();
             const ratio = Math.max(window.devicePixelRatio || 1, 1);
-            canvas.width = 300 * ratio;
+            canvas.width = 250 * ratio;
             canvas.height = 100 * ratio;
             ctx.scale(ratio, ratio);
             ctx.lineWidth = 2;
@@ -247,6 +261,8 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
 
+        document.getElementById("currentDate").innerText = new Date().toLocaleDateString();
+
         document.getElementById('form').addEventListener('submit', async function(event) {
             event.preventDefault();
 
@@ -287,32 +303,32 @@
             firstPage.drawText(name, { x: 215, y: 662, size: 10 });
             firstPage.drawText(fatherName, { x: 215, y: 650, size: 10 });
             firstPage.drawText(motherName, { x: 215, y: 637, size: 10 });
-            firstPage.drawText(birthDate, { x: 215, y: 624, size: 10 });
+            firstPage.drawText(birthDate, { x: 215, y: 625, size: 10 });
             firstPage.drawText(nationality, { x: 215, y: 612, size: 10 });
             firstPage.drawText(serialNo, { x: 215, y: 599, size: 10 });
             firstPage.drawText(bloodType, { x: 215, y: 587, size: 10 });
             firstPage.drawText(email, { x: 215, y: 575, size: 10 });
             firstPage.drawText(phone, { x: 215, y: 562, size: 10 });
-            firstPage.drawText(educationLevel, { x: 215, y: 500, size: 10 });
-            firstPage.drawText(job, { x: 410, y: 500, size: 10 });
-            firstPage.drawText(homeAddress, { x: 215, y: 487, size: 10 });
-            firstPage.drawText(homePhone, { x: 215, y: 475, size: 10 });
-            firstPage.drawText(workAddress, { x: 215, y: 462, size: 10 });
-            firstPage.drawText(workPhone, { x: 215, y: 450, size: 10 });
-            firstPage.drawText(emergencyName, { x: 215, y: 398, size: 10 });
-            firstPage.drawText(emergencyRelation, { x: 215, y: 384, size: 10 });
-            firstPage.drawText(emergencyAddress, { x: 215, y: 372, size: 10 });
-            firstPage.drawText(emergencyPhone, { x: 215, y: 359, size: 10 });
-            firstPage.drawText(day, { x: 350, y: 304, size: 10 });
-            firstPage.drawText(month, { x: 366, y: 304, size: 10 });
-            firstPage.drawText(year, { x: 399, y: 304, size: 10});
-            firstPage.drawText(name, { x: 440, y: 265, size: 10 });
+            firstPage.drawText(educationLevel, { x: 215, y: 550, size: 10 });
+            firstPage.drawText(job, { x: 410, y: 551, size: 10 });
+            firstPage.drawText(homeAddress, { x: 215, y: 537, size: 10 });
+            firstPage.drawText(homePhone, { x: 215, y: 524, size: 10 });
+            firstPage.drawText(workAddress, { x: 215, y: 512, size: 10 });
+            firstPage.drawText(workPhone, { x: 215, y: 498, size: 10 });
+            firstPage.drawText(emergencyName, { x: 215, y: 459, size: 10 });
+            firstPage.drawText(emergencyRelation, { x: 215, y: 446, size: 10 });
+            firstPage.drawText(emergencyAddress, { x: 215, y: 435, size: 10 });
+            firstPage.drawText(emergencyPhone, { x: 215, y: 422, size: 10 });
+            firstPage.drawText(day, { x: 348, y: 367, size: 10 });
+            firstPage.drawText(month, { x: 365, y: 367, size: 10 });
+            firstPage.drawText(year, { x: 399, y: 367, size: 10});
+            firstPage.drawText(name, { x: 460, y: 360, size: 10 });
 
             const signatureImage = await pdfDoc.embedPng(signatureDataUrl);
             const signatureDims = signatureImage.scale(0.2);
             firstPage.drawImage(signatureImage, {
-                x: 430,
-                y: 230,
+                x: 450,
+                y: 300,
                 width: signatureDims.width,
                 height: signatureDims.height,
             });
