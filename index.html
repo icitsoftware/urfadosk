@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Üye Kayıt Formu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         #signature {
             border: 1px solid #ccc;
@@ -29,41 +30,46 @@
         <div class="card shadow-lg">
         <div class="card-header bg-primary text-white text-center">
         <h2 class="text-center">URFADOSK Üye Kayıt Formu - <span id="currentDate"></span></h2>
-        </div>
-        <div class="card-body">
+    </div>
+    <p class="card-header text-muted text-center" style="background-color: #ffeb3b; color: #333; border: 2px solid #ffa000; padding: 1rem; border-radius: 8px; font-weight: bold; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+        <i class="fas fa-exclamation-circle" style="color: #ff5722; margin-right: 0.5rem;"></i>
+        Formu doldurup PDF çıktısını, 3 vesikalık fotoğraf, nüfus cüzdanı fotokopisi ve aidat makbuzuyla birlikte kulübe teslim edin. Aidat IBAN bilgisi PDF’de.
+    </p>
+    
+    <div class="card-body">
         <form id="form">
             <div class="row mb-3">
                 <div class="col-md-3">
                     <label for="tc" class="form-label">T.C. Kimlik No*</label>
-                    <input type="text" class="form-control" id="tc" name="tc" value="4324324" required >
+                    <input type="text" class="form-control" id="tc" name="tc" required placeholder="T.C. Kimlik Numaranız">
                 </div>
                 <div class="col-md-3">
                     <label for="name" class="form-label">Adı Soyadı*</label>
-                    <input type="text" class="form-control" id="name" name="name" value="John Doe" required placeholder="Adı Soyadı">
+                    <input type="text" class="form-control" id="name" name="name" required placeholder="Adı Soyadı">
                 </div>
                 <br>
                 <div class="col-md-3">
-                    <label for="fatherName" class="form-label">Baba Adı</label>
-                    <input type="text" class="form-control" id="fatherName" name="fatherName" value="Joe Doe" placeholder="Baba Adı">
+                    <label for="fatherName" class="form-label">Baba Adı*</label>
+                    <input type="text" class="form-control" id="fatherName" name="fatherName" placeholder="Baba Adı" required>
                 </div>
                 <br>
                 <div class="col-md-3">
-                    <label for="motherName" class="form-label">Ana Adı</label>
-                    <input type="text" class="form-control" id="motherName" name="motherName" value="Jane Doe" placeholder="Ana Adı">
+                    <label for="motherName" class="form-label">Ana Adı*</label>
+                    <input type="text" class="form-control" id="motherName" name="motherName" placeholder="Ana Adı" required>
             </div>
         </div>
             <div class="row mb-3">
                 <div class="col-md-3">
                     <label for="birthDate" class="form-label">Doğum Tarihi*</label>
-                    <input type="date" class="form-control" id="birthDate" name="birthDate" value="1990-01-01" required>
+                    <input type="date" class="form-control" id="birthDate" name="birthDate" required>
                 </div>
                 <div class="col-md-3">
                     <label for="nationality" class="form-label">Uyruğu*</label>
-                    <input type="text" class="form-control" id="nationality" name="nationality" value="TC" required>
+                    <input type="text" class="form-control" id="nationality" name="nationality" required placeholder="Örn: TC">
                 </div>
                 <div class="col-md-3">
                     <label for="serialNo" class="form-label">Seri No</label>
-                    <input type="text" class="form-control" id="serialNo" name="serialNo" value="12312312">
+                    <input type="text" class="form-control" id="serialNo" name="serialNo" placeholder="Kimlik Seri No" >
                 </div>
                 <div class="col-md-3">
                     <label for="bloodType" class="form-label">Kan Grubu*</label>
@@ -81,12 +87,12 @@
             </div>
             <div class="row mb-3">
                 <div class="col-md-3">
-                    <label for="email" class="form-label">E-posta</label>
-                    <input type="email" class="form-control" id="email" name="email" value="john.doe@example.com">
+                    <label for="email" class="form-label">E-posta*</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Geçerli bir e-posta adresi giriniz" required>
                 </div>
                 <div class="col-md-3">
                     <label for="phone" class="form-label">Cep Telefonu*</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" value="+905551234567" required>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="+90" required>
                 </div>
                 <div class="col-md-3">
                     <label for="educationLevel" class="form-label">Tahsili</label>
@@ -102,26 +108,26 @@
                 </div>
                 <div class="col-md-3">
                     <label for="job" class="form-label">Mesleği</label>
-                    <input type="text" class="form-control" id="job" name="job" value="Mühendis">
+                    <input type="text" class="form-control" id="job" name="job" placeholder="Örn: Memur">
                 </div>
             </div>
             
             <div class="row mb-3">
                 <div class="col-md-3">
                     <label for="homeAddress" class="form-label">Ev Adresi*</label>
-                    <input type="text" class="form-control" id="homeAddress" name="homeAddress" value="Bağdat Cad. No:12, Kadıköy, İstanbul" required>
+                    <input type="text" class="form-control" id="homeAddress" name="homeAddress" placeholder="İkamet adresinizi giriniz" required>
                 </div>
                 <div class="col-md-3">
                     <label for="homePhone" class="form-label">Ev Telefonu</label>
-                    <input type="text" class="form-control" id="homePhone" name="homePhone" value="0414345345345">
+                    <input type="text" class="form-control" id="homePhone" name="homePhone" placeholder="Zorunlu değil">
                 </div>
                 <div class="col-md-3">
                     <label for="workAddress" class="form-label">İş Adresi</label>
-                    <input type="text" class="form-control" id="workAddress" name="workAddress" value="Bağdat Cad. No:12, Şişli, İstanbul">
+                    <input type="text" class="form-control" id="workAddress" name="workAddress" placeholder="Zorunlu değil">
                 </div>
                 <div class="col-md-3">
                     <label for="workPhone" class="form-label">İş Telefonu</label>
-                    <input type="text" class="form-control" id="workPhone" name="workPhone" value="021612312323">
+                    <input type="text" class="form-control" id="workPhone" name="workPhone" placeholder="Zorunlu değil">
                 </div>
                 
             </div>
@@ -129,21 +135,21 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="emergencyName" class="form-label">Adı Soyadı*</label>
-                    <input type="text" class="form-control" id="emergencyName" name="emergencyName" value="Jane Doe" required>
+                    <input type="text" class="form-control" id="emergencyName" name="emergencyName" required placeholder="Yakının adı soyadı">
                 </div>
                 <div class="col-md-6">
                     <label for="emergencyRelation" class="form-label">Yakınlığı</label>
-                    <input type="text" class="form-control" id="emergencyRelation" name="emergencyRelation" value="Annesi">
+                    <input type="text" class="form-control" id="emergencyRelation" name="emergencyRelation" placeholder="Örn: Kardeşi">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label for="emergencyAddress" class="form-label">Adresi</label>
-                    <input type="text" class="form-control" id="emergencyAddress" name="emergencyAddress" value="Bağdat Cad. No:14, Kadıköy, İstanbul">
+                    <label for="emergencyAddress" class="form-label">Adresi*</label>
+                    <input type="text" class="form-control" id="emergencyAddress" name="emergencyAddress" placeholder="Yakının adres bilgisi">
                 </div>
                 <div class="col-md-6">
                     <label for="emergencyPhone" class="form-label">Telefonu*</label>
-                    <input type="tel" class="form-control" id="emergencyPhone" name="emergencyPhone" value="+905551234568" required>
+                    <input type="tel" class="form-control" id="emergencyPhone" name="emergencyPhone" placeholder="Yakının telefon numarası" required>
                 </div>
             </div>
             <div class="row mb-3 g-3">
@@ -261,7 +267,7 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
 
-        document.getElementById("currentDate").innerText = new Date().toLocaleDateString();
+        document.getElementById("currentDate").innerText = new Date().toLocaleDateString('tr-TR');
 
         document.getElementById('form').addEventListener('submit', async function(event) {
             event.preventDefault();
@@ -338,19 +344,17 @@
             const url = URL.createObjectURL(blob);
             let newWindow = null;
 
-            // Tarayıcı kontrolü
+            // Browser check
             const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
             const isMiBrowser = /MiuiBrowser/i.test(navigator.userAgent);
 
             if (isSafari || isMiBrowser) {
-                // Safari veya Mi tarayıcı ise PDF'i indirmeyi öner
                 const link = document.createElement('a');
                 link.href = url;
-                link.download = 'document.pdf'; // İndirilecek PDF dosyasının adı
+                link.download = 'document.pdf';
                 link.click();
                 alert('Tarayıcıda PDF açma desteği kısıtlı. Dosya indiriliyor.');
             } else {
-                // Diğer tarayıcılar için yeni sekme açmayı dene
                 newWindow = window.open(url, '_blank');
                 if (newWindow === null) {
                     alert("Pop-up engellendi. Lütfen tarayıcı ayarlarından pop-up izni verin.");
