@@ -200,6 +200,13 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
 
+        function formatDateToDDMMYYYY(dateString) {
+            const date = new Date(dateString);
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const year = date.getFullYear();
+            return `${day}-${month}-${year}`;
+        }
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
@@ -277,6 +284,7 @@
             const fatherName = convertToAscii(document.getElementById('fatherName').value);
             const motherName = convertToAscii(document.getElementById('motherName').value);
             const birthDate = convertToAscii(document.getElementById('birthDate').value);
+            const formattedBirthDate = formatDateToDDMMYYYY(birthDate);
             const nationality = convertToAscii(document.getElementById('nationality').value);
             const serialNo = convertToAscii(document.getElementById('serialNo').value);
             const bloodType = convertToAscii(document.getElementById('bloodType').value);
@@ -309,7 +317,7 @@
             firstPage.drawText(name, { x: 215, y: 662, size: 10 });
             firstPage.drawText(fatherName, { x: 215, y: 650, size: 10 });
             firstPage.drawText(motherName, { x: 215, y: 637, size: 10 });
-            firstPage.drawText(birthDate, { x: 215, y: 625, size: 10 });
+            firstPage.drawText(formattedBirthDate, { x: 215, y: 625, size: 10 });
             firstPage.drawText(nationality, { x: 215, y: 612, size: 10 });
             firstPage.drawText(serialNo, { x: 215, y: 599, size: 10 });
             firstPage.drawText(bloodType, { x: 215, y: 587, size: 10 });
